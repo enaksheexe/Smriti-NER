@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smriti NER</title>
+    <!-- Importing fonts to match the design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="logo-container">
+        <div class="logo-icon">স</div>
+        <div class="logo-text">Smriti NER</div>
+    </div>
+    <nav>
+        <ul id="nav-menu">
+            <li><a href="#" class="active" onclick="showPage('home', event)">Home</a></li>
+            <li><a href="#" onclick="showPage('games', event)">Games</a></li>
+            <li><a href="#" onclick="showPage('routine', event)">Daily Routine</a></li>
+            <li><a href="#" onclick="showPage('album', event)">Memory Album</a></li>
+            <li><a href="#">Caregiver</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <button id="auth-btn" class="sign-in-btn" onclick="showPage('signin', event)">Sign in</button>
+</header>
+
+    <!-- Home Page Content -->
+    <main id="home-page">
+    <section class="hero-section">
+        <div class="hero-content">
+            <p class="overline">North Eastern Region</p>
+            <h1>Keeping memories close, one gentle game at a time</h1>
+            <p class="sub-heading-regional">স্মৃতি কাষতে থাকক</p>
+            <p class="description">Smriti NER is a cognitive gaming and memory assistance platform for elderly people living with dementia — built around the languages, faces and places of North East India.</p>
+            
+            <div class="hero-buttons">
+                <button class="primary-btn hero-btn" onclick="showPage('games', event)">Start today's session</button>
+                <button class="secondary-btn hero-btn">I'm a caregiver</button>
+            </div>
+        </div>
+        
+        <div class="hero-image-container">
+            <!-- Replace 'your-image-file.jpg' with the actual name of your image -->
+            <img src="hero-image.jpg" alt="Elderly couple using tablet" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Keep your existing features cards below this -->
+    <section class="features">...
+        <section class="features">
+            <h2>What the platform does</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <div class="icon-img">🧠</div>
+                    <h3>Adaptive brain games</h3>
+                    <p>Difficulty adjusts on its own from recent accuracy, so sessions stay encouraging instead of frustrating.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-img" style="color: #007663;">🖼️</div>
+                    <h3>Personal memory album</h3>
+                    <p>Family faces, places and stories kept in one calm place for reminiscence therapy at home.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-img" style="color: #007663;">📈</div>
+                    <h3>Caregiver insights</h3>
+                    <p>Simple trends across sessions so families and clinicians can spot changes early.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-img" style="color: #007663;">🔤</div>
+                    <h3>Rooted in the NER</h3>
+                    <p>Familiar culture Bihu, bamboo, Loktak, orange orchards with Assamese alongside English.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-img" style="color: #007663;">🛡️</div>
+                    <h3>Private by default</h3>
+                    <p>Everything stays on the family's own device. No accounts, no uploads, works on low bandwidth.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-img" style="color: #007663;">🤝</div>
+                    <h3>Made for gentle hands</h3>
+                    <p>Large type, big touch targets, high contrast, no timers that punish a slow answer.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-text">Adaptive game types</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-text">Difficulty levels tuned automatically</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-text">Private on-device processing</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Games Page Content -->
+    <main id="games-page" style="display: none;">
+        <section class="games-intro">
+            <p>Pick any game. The level is chosen for you from how the last few sessions went — there is no wrong answer, only practice.</p>
+        </section>
+        <section class="games-list">
+            <div class="game-card">
+                <div class="game-icon">🀄</div>
+                <h3>Memory Match</h3>
+                <p class="game-regional">মনৰ মিল</p>
+                <p class="game-desc">Turn over pairs of familiar things from the region — tea leaves, bamboo, hornbill, gamosa.</p>
+                <a href="#" class="suggested-level" onclick="startMemoryMatch(event)">Play Suggested level 1 of 4 →</a>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">📝</div>
+                <h3>Word Recall</h3>
+                <p class="game-regional">শব্দ সোঁৱৰণ</p>
+                <p class="game-desc">Read a short list, wait a moment, then tick off everything you remember.</p>
+                <a href="#" class="suggested-level" onclick="startWordRecall(event)">Play Suggested level 2 of 4 →</a>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">🌤️</div>
+                <h3>Daily Orientation</h3>
+                <p class="game-regional">দৈনিক দিশ</p>
+                <p class="game-desc">Everyday grounding questions about the day, season and place you are in.</p>
+                <a href="#" class="suggested-level" onclick="startDailyOrientation(event)">Play Suggested level 1 of 4 →</a>
+            </div>
+        </section>
+    </main>
+    <!-- Playable Memory Match Game Page -->
+    <main id="memory-match-game" style="display: none;">
+        <div class="game-header">
+            <button onclick="showPage('games', event)" class="back-btn">← Back to Games</button>
+            <h2>Memory Match</h2>
+            <p class="score-display">Matches: <span id="match-score">0</span> / 4</p>
+        </div>
+        
+        <div class="game-grid" id="game-grid">
+            <!-- Cards will be generated here by JavaScript -->
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="restart-btn" class="sign-in-btn" style="display: none;" onclick="initMemoryMatch()">Play Again</button>
+        </div>
+    </main>
+    <!-- Playable Word Recall Game Page -->
+    <main id="word-recall-game" style="display: none;">
+        <div class="game-header">
+            <button onclick="showPage('games', event)" class="back-btn">← Back to Games</button>
+            <h2>Word Recall</h2>
+            <p class="sub-heading-regional">শব্দ সোঁৱৰণ</p>
+            <p class="description" id="wr-instructions">Read the words slowly and say them aloud. In a moment they will hide, and you can tick the ones you remember.</p>
+        </div>
+
+        <!-- Phase 1: Memorize -->
+        <div id="wr-phase-1" class="word-list-container">
+            <div class="word-card"><h3>Flower</h3><p class="game-regional">ফুল</p></div>
+            <div class="word-card"><h3>Basket</h3><p class="game-regional">পাচি</p></div>
+            <div class="word-card"><h3>Bridge</h3><p class="game-regional">দলং</p></div>
+            <div class="word-card"><h3>Umbrella</h3><p class="game-regional">ছাতি</p></div>
+            <button class="primary-btn" onclick="goToWordRecallPhase2()">I'm ready</button>
+        </div>
+
+        <!-- Phase 2: Recall (Checklist) -->
+        <div id="wr-phase-2" style="display: none;">
+            <div class="checklist-container" id="wr-checklist">
+                <!-- Checkboxes generated by JS -->
+            </div>
+            <button class="primary-btn" onclick="showWordRecallResults()">Check my answers</button>
+        </div>
+
+        <!-- Phase 3: Results -->
+        <div id="wr-phase-3" class="result-card" style="display: none;">
+            <h2 id="wr-result-title">You remembered 0 of 4</h2>
+            <p class="description">The words were: Flower, Basket, Bridge, Umbrella. Every attempt helps — well done for practising today.</p>
+            <button class="primary-btn" onclick="startWordRecall(event)">Try another round</button>
+            <button class="secondary-btn" onclick="showPage('games', event)">Back to games</button>
+        </div>
+    </main>
+
+    <!-- Playable Daily Orientation Game Page -->
+    <main id="daily-orientation-game" style="display: none;">
+        <div class="game-header">
+            <button onclick="showPage('games', event)" class="back-btn">← Back to Games</button>
+            <h2>Daily Orientation</h2>
+            <p class="sub-heading-regional">দৈনিক দিশ</p>
+            <p class="description">A short grounding routine about today and about home. If a question feels hard, simply choose what feels right.</p>
+        </div>
+
+        <div class="quiz-card">
+            <p class="quiz-progress" id="do-progress">Question 1 of 3</p>
+            <h2 id="do-question" class="quiz-question">Which month are we in?</h2>
+            <p id="do-regional" class="sub-heading-regional">এতিয়া কোনটো মাহ?</p>
+            
+            <div class="options-container" id="do-options">
+                <!-- Options generated by JS -->
+            </div>
+        </div>
+    </main>
+    <!-- Daily Routine Page -->
+    <main id="routine-page" style="display: none;">
+        <div class="game-header">
+            <h2>Today's routine</h2>
+            <p class="sub-heading-regional">আজিৰ দৈনন্দিন</p>
+            <p class="description">Tick each task as it is finished. An alarm rings gently when something is due.</p>
+        </div>
+
+        <button class="secondary-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px;" onclick="requestNotification()">
+            🔔 Turn on reminder alerts
+        </button>
+
+        <!-- Heatmap Calendar -->
+        <div class="routine-card" style="margin-bottom: 24px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Last 7 Days Progress</h3>
+            <div class="heatmap-grid" id="heatmap-container">
+                <!-- Heatmap boxes generated by JS -->
+            </div>
+        </div>
+
+        <p id="routine-progress" style="font-weight: 600; margin-bottom: 16px;">0 of 0 done</p>
+
+        <!-- Active Tasks -->
+        <div id="active-tasks-container" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+            <!-- Tasks generated by JS -->
+        </div>
+
+        <!-- Default Suggestions (Shows if empty) -->
+        <div id="routine-suggestions" class="routine-card" style="margin-bottom: 24px;">
+            <p style="margin-bottom: 16px;">No routine yet. Start with the usual ones:</p>
+            <div class="suggestions-list">
+                <button class="suggestion-pill" onclick="addSuggestedTask('Morning medicine', 'Medicine · ঔষধ', '08:00')">+ Morning medicine · 8:00 AM</button>
+                <button class="suggestion-pill" onclick="addSuggestedTask('Breakfast', 'Meal · আহাৰ', '08:30')">+ Breakfast · 8:30 AM</button>
+                <button class="suggestion-pill" onclick="addSuggestedTask('Morning walk', 'Walk · খোজকাঢ়া', '07:00')">+ Morning walk · 7:00 AM</button>
+            </div>
+        </div>
+
+        <!-- Add Task Form -->
+        <div class="routine-card">
+            <h3 style="margin-bottom: 16px; font-size: 1.4rem;">Add to the routine</h3>
+            <input type="text" id="new-task-name" class="routine-input" placeholder="e.g. Blood pressure tablet">
+            
+            <select id="new-task-category" class="routine-input">
+                <option value="Medicine · ঔষধ">Medicine · ঔষধ</option>
+                <option value="Meal · আহাৰ">Meal · আহাৰ</option>
+                <option value="Walk · খোজকাঢ়া">Walk · খোজকাঢ়া</option>
+                <option value="Other · অন্য">Other · অন্য</option>
+            </select>
+
+            <input type="time" id="new-task-time" class="routine-input">
+            
+            <button class="primary-btn" onclick="addNewTask()">+ Add</button>
+        </div>
+    </main>
+    <!-- Memory Album Page -->
+    <main id="album-page" style="display: none;">
+        <div class="game-header">
+            <h2>Memory Album</h2>
+            <p class="sub-heading-regional">স্মৃতিৰ এলবাম</p>
+            <p class="description">Add the faces, places and moments that matter. Go through a few together each day — reminiscence is one of the kindest forms of therapy. Everything stays on this device.</p>
+        </div>
+
+        <!-- Add Memory Form -->
+        <div class="routine-card" style="margin-bottom: 30px;">
+            <label class="input-label">Who or what is this?</label>
+            <input type="text" id="album-title" class="routine-input" placeholder="e.g. Runu, my daughter">
+
+            <label class="input-label">Relation or place</label>
+            <input type="text" id="album-subtitle" class="routine-input" placeholder="e.g. Daughter, Shillong">
+
+            <label class="input-label">A story to read aloud</label>
+            <textarea id="album-story" class="routine-input" rows="3" placeholder="A short memory in simple sentences"></textarea>
+
+            <label class="input-label">Photo (optional)</label>
+            <input type="file" id="album-photo" class="routine-input" accept="image/*" style="background: white; padding: 12px;">
+
+            <button class="primary-btn" onclick="addMemory()">Add to album</button>
+        </div>
+
+        <!-- Memory Feed -->
+        <div id="memory-feed-container" style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px;">
+            <!-- Generated memory cards will appear here -->
+        </div>
+    </main>
+    <!-- Sign In Page -->
+    <main id="signin-page" style="display: none;">
+        <div class="auth-container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 4px;">Welcome back</h2>
+            <p class="sub-heading-regional" style="font-size: 1.2rem;">পুনৰ স্বাগতম</p>
+            <p class="description" style="margin-bottom: 32px;">Sign in to keep the daily routine, reminders and progress safe for your family.</p>
+
+            <button class="secondary-btn google-btn">Continue with Google</button>
+
+            <div class="divider">
+                <span>or use email</span>
+            </div>
+
+            <label class="input-label">Email</label>
+            <input type="email" class="routine-input" placeholder="">
+
+            <label class="input-label">Password</label>
+            <input type="password" class="routine-input" placeholder="">
+
+            <button class="primary-btn" style="margin-top: 16px;" onclick="handleLogin()">Sign in</button>
+
+            <div class="auth-links">
+                <p>New here? <a href="#">Create an account</a></p>
+                <a href="#" onclick="showPage('home', event)">Back to home</a>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
